@@ -55,3 +55,10 @@ def index(request):
     return render(request, 'tsks/index.html')
 
     # return HttpResponse("This is the tsks add")
+
+def delete_tasks(request):
+    if request.method == 'POST':
+        task_ids = request.POST.get('task_ids', '').split(',')
+        Task.objects.filter(id__in=task_ids).delete()
+
+    return redirect('tsks:all')

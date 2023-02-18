@@ -18,6 +18,7 @@ class Task(models.Model):
     # category = models.ForeignKey(Category, on_delete=models.CASCADE)
     # taskID = 
     task_name = models.CharField(max_length=100)
+    completed = models.BooleanField(default=False)
     p_date = models.DateTimeField(max_length=200)
 
     def __str__(self):
