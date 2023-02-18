@@ -5,20 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tsks/style.css' %}">
+
+    <title>Tasks</title>
 </head>
 
-<body>
+<body class="list">
     {% if latest_task_list %}
-    <ul>
-        {% for task in latest_task_list %}
-        <!-- <li><a href="/tsks/{{ task.id }}/">{{ task.task_name }}</a></li> -->
-        <li><a href="{% url 'tsks:t_detail' task.id %}">{{ task.task_name }}</a></li>
-        {% endfor %}
-    </ul>
+    <div class="dv_list">
+        <ul>
+            {% for task in latest_task_list %}
+            <!-- <li><a href="/tsks/{{ task.id }}/">{{ task.task_name }}</a></li> -->
+            <li><a href="{% url 'tsks:t_detail' task.id %}">{{ task.task_name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
     <button><a href="{% url 'tsks:index'%}">Add</a></button>
     {% else %}
     <p>No tasks are available.</p>
     <button><a href="{% url 'tsks:index'%}">Add</a></button>
     {% endif %}
+
 </html>
