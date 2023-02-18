@@ -9,31 +9,6 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'tsks/style.css' %}">
 
-    <script>
-        var saveButton = document.querySelector('button[type="submit"][form="save-form"]');
-        var deleteButton = document.querySelector('button[type="submit"][form="delete-form"]');
-        var checkboxes = document.querySelectorAll('input[type="checkbox"][name^="task-"]');
-    
-        saveButton.addEventListener('click', function() {
-            var taskIds = [];
-            for (var i = 0; i < checkboxes.length; i++) {
-                if (checkboxes[i].checked) {
-                    taskIds.push(checkboxes[i].name.replace('task-', ''));
-                }
-            }
-            document.getElementById('task_ids').value = taskIds.join(',');
-        });
-    
-        deleteButton.addEventListener('click', function() {
-            var taskIds = [];
-            for (var i = 0; i < checkboxes.length; i++) {
-                if (checkboxes[i].checked) {
-                    taskIds.push(checkboxes[i].name.replace('task-', ''));
-                }
-            }
-            document.getElementById('task_ids').value = taskIds.join(',');
-        });
-    </script>
     
     <title>Tasks</title>
 </head>
@@ -51,21 +26,9 @@
         </ul>
     </div>
     <a class="addbtn" href="{% url 'tsks:index'%}">Add Task</a>
-    <form method="post" action="{% url 'delete_tasks' %}">
-        {% csrf_token %}
-        <input type="hidden" name="task_ids" id="task_ids">
-        <button type="submit">Delete</button>
-    </form>
-    
     {% else %}
     <p>No tasks are available.</p>
     <a class="addbtn" href="{% url 'tsks:index'%}">Add Task</a>
-    <form method="post" action="{% url 'delete_tasks' %}">
-        {% csrf_token %}
-        <input type="hidden" name="task_ids" id="task_ids">
-        <button type="submit">Delete</button>
-    </form>
-    
     {% endif %}
 
 </html>
