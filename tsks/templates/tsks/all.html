@@ -13,6 +13,7 @@
 </head>
 
 <body class="list">
+    <h1>Task List</h1>
     {% if latest_task_list %}
     <div class="dv_list">
         <ul>
@@ -22,10 +23,10 @@
             {% endfor %}
         </ul>
     </div>
-    <button><a href="{% url 'tsks:index'%}">Add</a></button>
+    <a class="addbtn" href="{% url 'tsks:index'%}">Add Task</a>
     {% else %}
     <p>No tasks are available.</p>
-    <button><a href="{% url 'tsks:index'%}">Add</a></button>
+    <a class="addbtn" href="{% url 'tsks:index'%}">Add Task</a>
     {% endif %}
 
 </html>

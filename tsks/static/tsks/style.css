@@ -1,18 +1,42 @@
-.list{ 
-margin:auto;
-text-align: center;
+.list {
+    margin: auto;
+    text-align: center;
+   
 }
 
-.list li{
+.list li {
     text-decoration: none;
     background: aliceblue;
     margin: 4px;
     padding: 6px;
-    max-width: 30%;
     border-radius: 5px;
     text-align: center;
     list-style-type: none;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
-.list li a{
-    text-decoration: none;}
+.list li:hover{
+    border:2px solid rgb(96, 96, 230);
+    background: rgb(238, 232, 177);
+}
+
+.list li a {
+    text-decoration: none;
+}
+
+.addbtn{
+    background-color: rgb(89, 137, 241);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 4px;
+}
+
+.indx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}

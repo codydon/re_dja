@@ -5,22 +5,26 @@
     <meta charset="UTF-8">
     <meta htttaskp-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tsks/style.css' %}">
+
     <title>Add Task</title>
 </head>
 
-<body>
+<body class="indx">
     <form method="POST" action="{% url 'tsks:index' %}">
         {% csrf_token %}
-      
+
         <label for="task">Task:</label>
         <input type="text" id="task" name="task" required>
-<!--       
+        <!--       
         <label for="due_date">Due date:</label>
         <input type="date" id="due_date" name="due_date" required> -->
-      
+
         <button type="submit">Create Task</button>
-      </form>
-      
+    </form>
+
     </form>
 </body>
 
