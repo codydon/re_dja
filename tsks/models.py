@@ -15,7 +15,7 @@ class Category(models.Model):
         return self.c_name
 
 class Task(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    # category = models.ForeignKey(Category, on_delete=models.CASCADE)
     # taskID = 
     task_name = models.CharField(max_length=100)
     p_date = models.DateTimeField(max_length=200)
