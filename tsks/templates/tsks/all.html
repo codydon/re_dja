@@ -16,9 +16,9 @@
         <li><a href="{% url 'tsks:t_detail' task.id %}">{{ task.task_name }}</a></li>
         {% endfor %}
     </ul>
+    <button><a href="{% url 'tsks:index'%}">Add</a></button>
     {% else %}
     <p>No tasks are available.</p>
+    <button><a href="{% url 'tsks:index'%}">Add</a></button>
     {% endif %}
-</body>
-
 </html>

@@ -10,7 +10,7 @@ from datetime import datetime
 # Create your views here.
 def all(request):
     # return HttpResponse("This is the tsks index")
-    latest_task_list = Task.objects.order_by('-task_name')[:5]
+    latest_task_list = Task.objects.order_by('-task_name') #[:5]
     # output = ', '.join([q.task_name for q in latest_task_list])
     # return HttpResponse(output)
 
